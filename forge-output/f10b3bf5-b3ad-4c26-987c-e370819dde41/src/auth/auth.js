@@ -1,0 +1,1 @@
+export async function login(username, password) { try { // Implement login logic } catch (error) { console.error('Error logging in:', error); throw error; } }

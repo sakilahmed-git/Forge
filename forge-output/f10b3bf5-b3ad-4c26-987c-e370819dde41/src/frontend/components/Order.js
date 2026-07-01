@@ -1,0 +1,5 @@
+export { default } from './Order';
+import { productRoutes } from 'src/routes/product.routes.js';
+import { orderRoutes } from 'src/routes/order.routes.js';
+class Order { constructor() {} async render() { try { // Render order component console.log('Rendering order component...'); } catch (error) { if (error instanceof Error) { console.error('Error rendering order component:', error.message); } else { console.error('Unknown error rendering order component:', error); } } } async validateUserInput(input) { try { // Validate user input if (!input || typeof input !== 'string') { throw new Error('Invalid user input'); } } catch (error) { if (error instanceof Error) { console.error('Error validating user input:', error.message); } else { console.error('Unknown error validating user input:', error); } } } async authenticateUser() { try { // Authenticate user const apiKey = process.env.API_KEY; if (!apiKey) { throw new Error('API key is not set'); } } catch (error) { if (error instanceof Error) { console.error('Error authenticating user:', error.message); } else { console.error('Unknown error authenticating user:', error); } } } }
+export default Order;

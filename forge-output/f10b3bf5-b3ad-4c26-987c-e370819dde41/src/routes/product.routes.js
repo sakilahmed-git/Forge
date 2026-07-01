@@ -1,0 +1,3 @@
+import { login } from 'src/auth/auth.js';
+import { getProducts } from 'src/db/db.js';
+export const productRoutes = async () => { try { const loginStatus = await login('username', 'password'); if (!loginStatus) { throw new Error('Authentication failed'); } const products = await getProducts(); return products; } catch (error) { if (error instanceof Error) { console.error('Error in product routes:', error.message); } else { console.error('Unknown error in product routes:', error); } } };

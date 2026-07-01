@@ -1,0 +1,1 @@
+export async function routes() { try { const loginStatus = await import('src/auth/auth.js').then(module => module.login('username', 'password')); if (!loginStatus) { throw new Error('Authentication failed'); } } catch (error) { if (error instanceof Error) { console.error('Error in routes:', error.message); } else { console.error('Unknown error in routes:', error); } } }

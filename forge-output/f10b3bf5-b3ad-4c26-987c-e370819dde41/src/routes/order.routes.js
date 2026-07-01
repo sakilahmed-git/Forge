@@ -1,0 +1,3 @@
+import { login } from 'src/auth/auth.js';
+import { getProducts } from 'src/db/db.js';
+export const orderRoutes = async () => { try { const products = await getProducts(); const authenticated = await login('username', 'password'); if (!authenticated) { throw new Error('Authentication failed'); } // Handle order routes return { message: 'Order routes handled' }; } catch (error) { console.error(error); throw error; } };

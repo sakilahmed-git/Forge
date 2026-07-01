@@ -1,0 +1,45 @@
+{
+  "name": "forge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec ts-node src/index.ts --watch src --ext ts",
+    "dev:dashboard": "cd client && npm run dev",
+    "dev:all": "concurrently \"npm run dev\" \"npm run dev:dashboard\"",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test:topo": "ts-node src/utils/test-topo.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@langchain/openai": "^1.4.7",
+    "chromadb": "^3.4.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "groq-sdk": "^1.2.1",
+    "helmet": "^8.2.0",
+    "langchain": "^1.4.4",
+    "mongoose": "^9.7.0",
+    "morgan": "^1.11.0",
+    "openai": "^6.42.0",
+    "socket.io": "^4.8.3",
+    "uuid": "^14.0.0",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^25.9.3",
+    "@types/uuid": "^10.0.0",
+    "concurrently": "^10.0.3",
+    "nodemon": "^3.1.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  }
+}
